@@ -9,6 +9,9 @@ import {
   Alert,
   Spinner,
 } from "react-bootstrap";
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'; // Import Font Awesome
+import { faCheckCircle } from '@fortawesome/free-solid-svg-icons'; // Import the icon
+
 import { useNavigate, useLoaderData } from "react-router-dom";
 import $axios from "../../lib/$axios";
 
@@ -44,7 +47,7 @@ const TaskList = () => {
 
   const confirmDeleteTask = async () => {
     try {
-      //await $axios.delete(`tasks/delete/${taskToDelete.id}`);
+      await $axios.delete(`tasks/delete/${taskToDelete.id}`);
       setTasks(tasks.filter((task) => task.id !== taskToDelete.id));
     } catch (error) {
       setAlert(error.message);
@@ -72,7 +75,7 @@ const TaskList = () => {
   };
 
   return (
-    <Container>
+    <Container className="pt-3">
       <Row className="justify-content-md-center mt-5">
         <Col xs={12} md={10}>
           <h2 className="text-center mb-4">Task List</h2>
@@ -85,7 +88,7 @@ const TaskList = () => {
               className="me-2"
               onClick={navigateToCreatePage}
             >
-              Create New Task
+              Create New Task 
             </Button>
             <Button variant="primary" onClick={handleLogoutClicked}>
               Logout
@@ -114,11 +117,35 @@ const TaskList = () => {
                     <tr key={task.id}>
                       <td>{index + 1}</td>
                       <td>{task.title}</td>
-                      <td>{task.status}</td>
+                      <td>
+
+              
+                        {task.status === "COMPLETED" ? (
+                          <>
+                           <span className="text-success me-2"><b>COMPLETED</b></span>
+                            <FontAwesomeIcon icon={faCheckCircle} className="text-success me-2" />
+                          </>
+                        ) : task.status === "IN_PROGRESS" ? (
+                          <>
+                            <span className="text-primary me-2"><b>IN PROGRESS</b></span> 
+                            </>
+                        ) : (
+                          <span className="text-danger me-2"><b>{task.status}</b></span>
+                          // <span></span>
+                        )}
+                        
+                     
+                     </td>
+
+
                       <td>{task.priority}</td>
+
+                      
+
+
                       <td>
                         <Button
-                          variant="info"
+                          variant="outline-info"
                           className="me-2"
                           onClick={() => navigateToDetailPage(task)}
                         >
@@ -126,7 +153,7 @@ const TaskList = () => {
                         </Button>
 
                         <Button
-                          variant="warning"
+                          variant="outline-secondary"
                           className="me-2"
                           onClick={() => navigateToEditPage(task)}
                         >
@@ -134,7 +161,7 @@ const TaskList = () => {
                         </Button>
 
                         <Button
-                          variant="danger"
+                          variant="outline-danger"
                           onClick={() => handleDeleteClick(task)}
                         >
                           Delete

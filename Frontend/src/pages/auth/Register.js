@@ -69,10 +69,23 @@ const Register = () => {
 
     if (!password) {
       errors.password = "Password is required.";
+    } else if(!isValidPassword(password)){
+      errors.password = "Password must be 8 digits and must contain at least one uppercase, one lowercase and one special character."
     }
 
     return errors;
   };
+
+
+  const isValidPassword = (pwd) => {
+
+    const criteria = new RegExp('(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[^A-Za-z0-9])(?=.{8,})')
+  
+    return criteria.test(pwd)
+  }
+
+
+
 
   return (
     <Container>
@@ -87,7 +100,7 @@ const Register = () => {
 
           <Form noValidate onSubmit={handleRegister}>
             <Form.Group controlId="formBasicUsername" className="mb-3">
-              <Form.Label>Username</Form.Label>
+              {/* <Form.Label>Username</Form.Label> */}
               <Form.Control
                 type="text"
                 placeholder="Enter username"
@@ -102,7 +115,7 @@ const Register = () => {
             </Form.Group>
 
             <Form.Group controlId="formBasicEmail" className="mb-3">
-              <Form.Label>Email address</Form.Label>
+              {/* <Form.Label>Email address</Form.Label> */}
               <Form.Control
                 type="email"
                 placeholder="Enter email"
@@ -117,7 +130,7 @@ const Register = () => {
             </Form.Group>
 
             <Form.Group controlId="formBasicPassword" className="mb-3">
-              <Form.Label>Password</Form.Label>
+              {/* <Form.Label>Password</Form.Label> */}
               <Form.Control
                 type="password"
                 placeholder="Password"

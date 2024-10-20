@@ -80,7 +80,7 @@ const Login = () => {
 
           <Form noValidate onSubmit={handleLogin}>
             <Form.Group controlId="formBasicEmail" className="mb-3">
-              <Form.Label>Email address</Form.Label>
+              {/* <Form.Label>Email address</Form.Label> */}
               <Form.Control
                 type="email"
                 placeholder="Enter email"
@@ -95,7 +95,7 @@ const Login = () => {
             </Form.Group>
 
             <Form.Group controlId="formBasicPassword" className="mb-3">
-              <Form.Label>Password</Form.Label>
+              {/* <Form.Label>Password</Form.Label> */}
               <Form.Control
                 type="password"
                 placeholder="Password"
