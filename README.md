@@ -19,7 +19,7 @@ Task Management: Users can easily create, view, edit, and delete tasks.
 **Usage**
 1. Start the application: `mvn spring-boot:run`
 2. Access the application: http://localhost:8081
-3. Access Swagger UI at http://localhost:8081/swagger-ui/html.html to explore the API documentation.
+3. Access Swagger UI at http://localhost:8081/swagger-ui/index.html to explore the API documentation.
 
 * `API_URL`: Base URL for the application : 
 http://localhost:8081/todo-list/api/
@@ -36,7 +36,7 @@ This application uses a separate React project for the frontend.
 **Project Setup**
 
 1. Navigate to the project directory: `cd project_folder_path/Frontend`
-2. Install dependencies: `npm install` and `npm install @fortawesome/react-fontawesome @fortawesome/free-solid-svg-icons`
+2. Install dependencies: `npm install`
 
 **Integration Details**
 
