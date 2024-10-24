@@ -49,5 +49,5 @@ Data is fetched from API endpoints and displayed on the user interface.
 2. Run the React development server: `npm start`
 -------------------------------------------------------
 
-**Authors**
+**Author**
 Khin Myo Wai
