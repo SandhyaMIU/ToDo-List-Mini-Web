@@ -49,16 +49,4 @@ public class TaskController {
         return ResponseEntity.ok(allTasks);
     }
 
-    @GetMapping("/status/{status}")
-    public ResponseEntity<List<Task>> getAllTasksByStatus(@PathVariable("status") StatusEnum status){
-        List<Task> allTasks = taskRepo.findByStatus(status);
-        return ResponseEntity.ok(allTasks);
-    }
-
-    @GetMapping("/priority/{priority}")
-    public ResponseEntity<List<Task>> getAllTasksByPriority(@PathVariable("priority") PriorityEnum priority){
-        List<Task> allTasks = taskRepo.findByPriority(priority);
-        return ResponseEntity.ok(allTasks);
-    }
-
 }

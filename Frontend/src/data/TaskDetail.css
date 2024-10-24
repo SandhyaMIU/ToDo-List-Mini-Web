@@ -1,0 +1,21 @@
+/* TaskList.css */
+.card-body-custom {
+    padding: 20px;
+    background-color: #e7edf1;
+    border-radius: 10px;
+  }
+  
+.card-title-custom {
+    text-align: left;
+    color: #0d6efd !important;
+    font-size: 24px;
+  }
+  
+.card-text-custom {
+    font-size: 18px;
+    margin-bottom: 10px;
+    margin-Left: '10px';
+  }
+  
+
+

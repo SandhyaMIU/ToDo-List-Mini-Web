@@ -73,7 +73,7 @@ const Login = () => {
     <Container>
       <Row className="justify-content-md-center mt-5">
         <Col xs={12} md={6}>
-          <h2 className="text-center mb-4">Login</h2>
+          <h2 className="text-center mb-4"><strong>Login</strong></h2>
 
           {validated && <Alert variant="success">Login successful!</Alert>}
           {errorMessage && <Alert variant="danger">{errorMessage}</Alert>}

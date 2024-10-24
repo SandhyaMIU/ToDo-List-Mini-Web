@@ -91,7 +91,7 @@ const Register = () => {
     <Container>
       <Row className="justify-content-md-center mt-5">
         <Col xs={12} md={6}>
-          <h2 className="text-center mb-4">Register</h2>
+          <h2 className="text-center mb-4"><strong>Register</strong></h2>
 
           {registered && (
             <Alert variant="success">Registration successful!</Alert>

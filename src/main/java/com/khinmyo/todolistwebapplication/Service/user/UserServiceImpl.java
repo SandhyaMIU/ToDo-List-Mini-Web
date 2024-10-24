@@ -56,19 +56,4 @@ public class UserServiceImpl implements UserService {
             return new LoginResponse("Email Not Found", false, null);
         }
     }
-
-
-    @Override
-    public List<Users> getAllUsers() {
-        return null;
-    }
-
-    @Override
-    public void deleteUserById(Long id) {
-    }
-
-    @Override
-    public Users updateUsersById(Long id, Users users) {
-        return null;
-    }
 }

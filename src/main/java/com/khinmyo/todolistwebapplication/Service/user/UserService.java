@@ -13,9 +13,4 @@ public interface UserService {
 
     LoginResponse loginUser(LoginDto loginDto);
 
-    List<Users> getAllUsers();
-
-    void deleteUserById(Long id);
-
-    Users updateUsersById(Long id, Users users);
 }

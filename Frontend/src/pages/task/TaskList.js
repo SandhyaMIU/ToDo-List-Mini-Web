@@ -78,7 +78,7 @@ const TaskList = () => {
     <Container className="pt-3">
       <Row className="justify-content-md-center mt-5">
         <Col xs={12} md={10}>
-          <h2 className="text-center mb-4">Task List</h2>
+          <h2 className="text-center mb-4"><strong>Task List</strong></h2>
 
           {alert && <Alert variant="danger">{alert}</Alert>}
 
@@ -118,8 +118,6 @@ const TaskList = () => {
                       <td>{index + 1}</td>
                       <td>{task.title}</td>
                       <td>
-
-              
                         {task.status === "COMPLETED" ? (
                           <>
                            <span className="text-success me-2"><b>COMPLETED</b></span>
@@ -132,17 +130,11 @@ const TaskList = () => {
                         ) : (
                           <span className="text-danger me-2"><b>{task.status}</b></span>
                           // <span></span>
-                        )}
-                        
+                        )} 
                      
                      </td>
 
-
                       <td>{task.priority}</td>
-
-                      
-
-
                       <td>
                         <Button
                           variant="outline-info"
@@ -155,7 +147,12 @@ const TaskList = () => {
                         <Button
                           variant="outline-secondary"
                           className="me-2"
-                          onClick={() => navigateToEditPage(task)}
+                          onClick={() => {
+                            if (task.status !== "COMPLETED") {
+                              navigateToEditPage(task);
+                            }
+                          }}
+                          disabled={task.status === "COMPLETED"} // Disable if task is completed
                         >
                           Edit
                         </Button>

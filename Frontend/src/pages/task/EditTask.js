@@ -71,16 +71,16 @@ const EditTask = () => {
     <Container>
       <Row className="justify-content-md-center mt-5">
         <Col xs={12} md={6}>
-          <h2 className="text-center mb-4">Edit Task</h2>
+          <h2 className="text-center mb-4"><strong>Edit Task</strong></h2>
 
           {taskUpdated && (
             <Alert variant="success">Task updated successfully!</Alert>
           )}
           {errorMessage && <Alert variant="danger">{errorMessage}</Alert>}
 
-          <Form noValidate onSubmit={handleUpdateTask}>
+          <Form noValidate onSubmit={handleUpdateTask} style={{ padding: '20px', backgroundColor: '#f8f9fa', borderRadius: '10px' }}>
             <Form.Group controlId="formBasicTitle" className="mb-3">
-              <Form.Label>Task Title</Form.Label>
+              <Form.Label><strong>Task Title</strong></Form.Label>
               <Form.Control
                 type="text"
                 placeholder="Enter task title"
@@ -95,7 +95,7 @@ const EditTask = () => {
             </Form.Group>
 
             <Form.Group controlId="formBasicDescription" className="mb-3">
-              <Form.Label>Task Description</Form.Label>
+              <Form.Label><strong>Task Description</strong></Form.Label>
               <Form.Control
                 as="textarea"
                 rows={3}
@@ -111,7 +111,7 @@ const EditTask = () => {
             </Form.Group>
 
             <Form.Group controlId="formBasicStatus" className="mb-3">
-              <Form.Label>Task Status</Form.Label>
+              <Form.Label><strong>Task Status</strong></Form.Label>
               <Form.Control
                 as="select"
                 value={status}
@@ -124,7 +124,7 @@ const EditTask = () => {
             </Form.Group>
 
             <Form.Group controlId="formBasicPriority" className="mb-3">
-              <Form.Label>Task Priority</Form.Label>
+              <Form.Label><strong>Task Priority</strong></Form.Label>
               <Form.Control
                 as="select"
                 value={priority}
@@ -136,10 +136,11 @@ const EditTask = () => {
               </Form.Control>
             </Form.Group>
 
+            <div className="d-flex justify-content-center">
             <Button
-              variant="primary"
+              
               type="submit"
-              className="w-100"
+              className="btn btn-primary"
               disabled={loading}
             >
               {loading ? (
@@ -158,6 +159,7 @@ const EditTask = () => {
                 "Update Task"
               )}
             </Button>
+            </div>
           </Form>
         </Col>
       </Row>

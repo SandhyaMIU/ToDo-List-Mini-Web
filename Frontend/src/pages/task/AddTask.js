@@ -135,10 +135,11 @@ const AddTask = () => {
               </Form.Control>
             </Form.Group>
 
+            <div className="d-flex justify-content-center">
             <Button
               variant="primary"
               type="submit"
-              className="w-100"
+              className="btn btn-primary"
               disabled={loading}
             >
               {loading ? (
@@ -154,9 +155,10 @@ const AddTask = () => {
                   Creating Task...
                 </>
               ) : (
-                "Create Task"
+                "Save Task"
               )}
             </Button>
+            </div>
           </Form>
         </Col>
       </Row>
